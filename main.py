@@ -7,26 +7,10 @@ command = "slowloris.py"
 # creates a Tk() object
 master = Tk()
 # root window
-master.geometry("300x600")
+master.geometry("300x400")
 master.title("Dos Pannel | by aziv1")
- 
-# Open new window on button click
-#def openNewWindow():
-#    # Toplevel object which will
-#    # be treated as a new window
-#    newWindow = Toplevel(master)
-# 
-#    # sets the title of the
-#    # Toplevel widget
-#    newWindow.title("Window 2")
-# 
-#    # sets the geometry of toplevel
-#    newWindow.geometry("200x200")
-# 
-#    # A Label widget to show in toplevel
-#    Label(newWindow, text ="New Windows Created").pack()
 
-
+#STARTING SLOWLORIS
 def startSlowloris():
     global command
 
@@ -47,6 +31,20 @@ def startSlowloris():
         command = command
     else:
         command = command + " -s " + inp_SOCK
+    
+    #EXTRA OPTIONS
+    inp_EXTRA = inputtxt4.get(1.0, "end-1c")
+    if inp_EXTRA == "":
+        command = command
+    else:
+        command = command + " " + inp_EXTRA
+    
+    
+    
+    ################################################################
+    # SPOOFERS AND MORE
+
+
 
     os.system('python ' + command)
 
@@ -89,6 +87,13 @@ text.pack(pady=10)
 # TextBox For Port
 inputtxt3 = Text(master, height = 1, width = 20)
 inputtxt3.pack()
+
+text = Label(master, text="EXTRA OPTIONS")
+text.pack(pady=10)
+
+# TextBox For Port
+inputtxt4 = Text(master, height = 1, width = 20)
+inputtxt4.pack()
 
 # mainloop, runs infinitely
 mainloop()
