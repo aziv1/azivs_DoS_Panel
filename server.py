@@ -17,6 +17,7 @@ while True:
     command = command.encode()
     client.send(command)
     print('[-->] Command Sent!')
+    print("")
     output = client.recv(1024)
     output = output.decode()
     print(f"Output: {output}")
