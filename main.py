@@ -14,13 +14,15 @@ master.title("Dos Pannel | by aziv1")
 def randomise_mac_linux():
     operating_system.system('sudo python randomise_mac_linux.py wlan0 -r')
 
+def randomise_mac_win():
+    operating_system.system('python randomise_mac_windows.py -r')
+
 def quit_program():
     os = platform.system()
     if os == "Linux":
        randomise_mac_linux()
     elif os == "Windows":
-        print("OS SUPPORT IS IN THE WORKS")
-        pass
+        randomise_mac_linux()
     else:
         print("OS IS NOT SUPPORTED")
         pass
@@ -69,8 +71,7 @@ def startSlowloris():
     if os == "Linux":
        randomise_mac_linux()
     elif os == "Windows":
-        print("OS SUPPORT IS IN THE WORKS")
-        pass
+        randomise_mac_linux()
     else:
         print("OS IS NOT SUPPORTED")
         pass

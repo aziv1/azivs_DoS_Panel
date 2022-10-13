@@ -48,9 +48,9 @@ if __name__ == "__main__":
         new_mac_address = args.mac
     # get the current MAC address
     old_mac_address = get_current_mac_address(iface)
-    print("[*] Old MAC address:", old_mac_address)
+    print("Old MAC address:", old_mac_address)
     # change the MAC address
     change_mac_address(iface, new_mac_address)
     # check if it's really changed
     new_mac_address = get_current_mac_address(iface)
-    print("[+] New MAC address:", new_mac_address)
+    print("New MAC address:", new_mac_address)
