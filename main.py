@@ -85,11 +85,6 @@ def helpSlowloris():
 
 label = Label(master, text ="DoS Panel | By aziv1")
 label.pack(pady = 10)
- 
-# a button widget which will open a
-# new window on button click
-#btn = Button(master, text ="Open New Window", command = openNewWindow)
-#btn.pack(pady = 10)
 
 #Start Slowloris Button, For Testing
 btn2 = Button(master, text ="Excecute", command = startSlowloris)
