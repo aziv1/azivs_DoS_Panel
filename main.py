@@ -1,17 +1,23 @@
 from tkinter import *
 from tkinter.ttk import *
 import os as os
+import platform
 
 command = "slowloris.py"
- 
+
 # creates a Tk() object
 master = Tk()
 # root window
 master.geometry("300x400")
 master.title("Dos Pannel | by aziv1")
 
+def randomise_mac_linux():
+    os.system('sudo python randomise_mac_linux.py wlan0 -r')
+
 #STARTING SLOWLORIS
 def startSlowloris():
+    os = platform.system()
+
     global command
 
     #IP TARGET CONFIG
@@ -43,6 +49,10 @@ def startSlowloris():
     
     ################################################################
     # SPOOFERS AND MORE
+
+    #if os == "Linux":
+    #   randomise_mac_linux()
+    
 
 
 
