@@ -8,11 +8,27 @@ command = "slowloris.py"
 # creates a Tk() object
 master = Tk()
 # root window
-master.geometry("300x400")
+master.geometry("300x450")
 master.title("Dos Pannel | by aziv1")
 
 def randomise_mac_linux():
     operating_system.system('sudo python randomise_mac_linux.py wlan0 -r')
+
+def quit_program():
+    os = platform.system()
+    if os == "Linux":
+       randomise_mac_linux()
+    elif os == "Windows":
+        print("OS SUPPORT IS IN THE WORKS")
+        pass
+    else:
+        print("OS IS NOT SUPPORTED")
+        pass
+
+    print("Quitting Now")
+
+    quit()
+
 
 #STARTING SLOWLORIS
 def startSlowloris():
@@ -106,9 +122,13 @@ inputtxt3.pack()
 text = Label(master, text="EXTRA OPTIONS")
 text.pack(pady=10)
 
-# TextBox For Port
+# TextBox For EXTRA
 inputtxt4 = Text(master, height = 1, width = 20)
 inputtxt4.pack()
+
+# BUTTON For QUIT
+btn3 = Button(master, text ="Quit", command = quit_program)
+btn3.pack(pady = 10)
 
 # mainloop, runs infinitely
 mainloop()
