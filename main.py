@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter.ttk import *
-import os as os
+import os as operating_system
 import platform
 
 command = "slowloris.py"
@@ -12,7 +12,7 @@ master.geometry("300x400")
 master.title("Dos Pannel | by aziv1")
 
 def randomise_mac_linux():
-    os.system('sudo python randomise_mac_linux.py wlan0 -r')
+    operating_system.system('sudo python randomise_mac_linux.py wlan0 -r')
 
 #STARTING SLOWLORIS
 def startSlowloris():
@@ -50,16 +50,21 @@ def startSlowloris():
     ################################################################
     # SPOOFERS AND MORE
 
-    #if os == "Linux":
-    #   randomise_mac_linux()
-    
+    if os == "Linux":
+       randomise_mac_linux()
+    elif os == "Windows":
+        print("OS SUPPORT IS IN THE WORKS")
+        pass
+    else:
+        print("OS IS NOT SUPPORTED")
+        pass
 
 
 
-    os.system('python ' + command)
+    operating_system.system('python ' + command)
 
 def helpSlowloris():
-    os.system('python slowloris.py --help')
+    operating_system.system('python slowloris.py --help')
 
 label = Label(master, text ="DoS Panel | By aziv1")
 label.pack(pady = 10)
